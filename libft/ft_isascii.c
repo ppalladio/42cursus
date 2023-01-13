@@ -23,7 +23,7 @@ int	ft_isascii(int c)
 
 int main(void)
 {
-    int i =Á;
+    int i = 1;
     printf("%d\n",ft_isascii(i));
 	printf("%d\n",isascii(i));}
 	
