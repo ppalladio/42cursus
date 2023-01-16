@@ -6,11 +6,11 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:07:13 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/16 15:21:57 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/16 15:38:43 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isalnum(int c)
+int ft_isalnum(int c)
 {
 	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
@@ -22,5 +22,7 @@ int isalnum(int c)
 #include<stdio.h>
 int main()
 {
-	printf()
+	int c = '*';
+	printf("%d\n",ft_isalnum(c));
+	printf("%d\n",isalnum(c));
 }
