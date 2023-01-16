@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 
-#include<stdio.h>
+#include "libft.h"
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	char	*j = s;
+
 	i = 0;
 	if (n!=0)
 	{
@@ -26,15 +27,13 @@ void	ft_bzero(void *s, size_t n)
 			i++;
 		}
 	}
-		j[n] = *"\0";
-		s = &j;
 }
 
 
 
 int main()
 {
-	void	*s;
+	void *s = (char *)"asc";
 	int i = 5;
 	
 	printf("%f\n",ft_bzero(s,i));
