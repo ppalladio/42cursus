@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:54:35 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/11 17:27:34 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/18 16:09:26 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,9 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-
-
 int main()
 {
-	void *s = (char *)"asc";
+	void *s = "asc";
 	int i = 5;
 	
 	printf("%f\n",ft_bzero(s,i));
