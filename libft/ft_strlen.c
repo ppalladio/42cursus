@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:41:11 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/16 19:06:43 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/18 18:03:26 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,8 @@ size_t ft_strlen(const char *s)
 
 
 	len = 0;
-
 	while (s[len] != '\0')
-	
 			len++;
-
 	return (len);
 }
 
@@ -31,7 +28,7 @@ int main(void)
 {
 	char *c;
 
-	c = "";
+	c = "ddas";
 	printf("%d\n", ft_strlen(c));
 	printf("%d\n", strlen(c));
 }

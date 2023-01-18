@@ -6,11 +6,13 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 15:04:20 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/11 16:44:14 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/18 17:07:20 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(unsigned char c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
@@ -18,9 +20,6 @@ int	ft_isalpha(unsigned char c)
 		return (0);
 }
 
-
-#include<ctype.h>
-#include<stdio.h>
 int main(void)
 {
 	unsigned char c = 'c';

@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 13:08:50 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/16 18:50:29 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/18 17:05:52 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 int		ft_isprint(int c);
 int		ft_isalpha(int c);
-int		ft_isupper(int c);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
@@ -26,7 +25,7 @@ int		ft_isascii(int c);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void * src, size_t n);
-int		ft_toupper(int c);
+int		ft_toupper(int c); 
 int		ft_tolower(int c);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
