@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 16:57:40 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/18 17:02:21 by yupeng           ###   ########.fr       */
+/*   Created: 2023/01/18 22:03:10 by marvin            #+#    #+#             */
+/*   Updated: 2023/01/18 22:03:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_toupper(int c)
+int		ft_tolower(int c)
 {
-	if (c >= 95 && c <= 122)
-		return (c - 32);
+	if (c <= 90 && c >=65)
+		return (c + 32);
 	else
-		return (c);
-}
-
-int main()
-{
-	int c = 73;
-	printf("%c\n",ft_toupeer(c));
-	printf("%c\n",toupper(c));
-	return 0;
+		return c;
 }
