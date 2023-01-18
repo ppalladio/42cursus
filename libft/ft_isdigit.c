@@ -18,3 +18,4 @@ int	ft_isalpha(unsigned int i)
 		return (0);
 }
 
+	// The values returned are //!nonzero if the character c falls into the tested class, and zero if not.

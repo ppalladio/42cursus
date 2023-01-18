@@ -26,3 +26,7 @@ int main(void)
 	printf("%d\n", ft_isalpha(c));
 	printf("%d" ,isalpha(c));
 }
+
+// RETURN VALUE
+//        The values returned are //!nonzero
+// if the character c falls into the tested class, and zero if not.

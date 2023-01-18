@@ -26,3 +26,7 @@ int main()
 	printf("%d\n",ft_isalnum(c));
 	printf("%d\n",isalnum(c));
 }
+
+// RETURN VALUE
+//        The values returned are //!nonzero 
+//if the character c falls into the tested class, and zero if not.

@@ -23,7 +23,7 @@ void	ft_bzero(void *s, size_t n)
 	{
 		while (i <= n)
 		{
-			j[i] = ;
+			j[i] = 0;
 			i++;
 		}
 	}
@@ -32,9 +32,26 @@ void	ft_bzero(void *s, size_t n)
 
 int main()
 {
-	void *s = "asc";
+	char *c = "asc";
+	void *s;
+	s = &c;
+	
+
 	int i = 5;
 	
 	printf("%f\n",ft_bzero(s,i));
-	printf("%s\n",bzero(s,i));
+	printf("%s\n",bzero(cc,i));
 }
+
+#include <stdio.h> 
+	int main(){ 
+	char str[10]="popo"; 
+	void *ptr; 
+	ptr = (&str); 
+	char *cptr = (char *)(ptr); 
+	while(*cptr != '\0'){ 
+		printf("%c",*cptr); 
+		cptr++; 
+	} 
+	return 0; 
+} 
