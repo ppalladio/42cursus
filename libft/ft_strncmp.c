@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:51:50 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/19 19:10:53 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/19 19:52:57 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	int	j;
 
 	i = 0;
-	
+
 	while (s1[i] && s2[i] )
 	{
 		j = 0;

@@ -6,15 +6,16 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 13:08:50 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/18 17:05:52 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/19 20:43:57 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef LIBFT_H
 # define LIBFT_H
-# include <ctype.h>
+# include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
+# include <unistd.h>
 
 int		ft_isprint(int c);
 int		ft_isalpha(int c);
