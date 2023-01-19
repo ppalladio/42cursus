@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:54:35 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/18 18:24:37 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/19 18:38:43 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@ void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
-	char	*j = s;
+	char	*j = (unsigned char *)s;
 
 	i = 0;
 	if (n!=0)
 	{
-		while (i <= n)
+		while (j[i] && i <= n)
 		{
 			j[i] = 0;
 			i++;
 		}
 	}
-	j[i]= '\0';
 }
 
 int main()
