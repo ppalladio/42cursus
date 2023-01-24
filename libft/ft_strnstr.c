@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:54:06 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/19 21:47:13 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/24 14:20:34 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char *ft_strnstr(const char *h, const char *n, size_t len)
 
 	c = *n;
 	i = 0;
-	size_t len_h = 0;
+	size_t len_n = 0;
 	printf("%c\n",*n++);
 	while (n[i])
 	{
