@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 13:08:50 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/26 13:58:45 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/26 14:31:45 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *h, const char *n, size_t len);
-int		ft_isdigit(int c);
+int		ft_isdigit(char c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 // with malloc
