@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:06:25 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/18 18:07:08 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/26 14:02:41 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ char *ft_strchr(const char *s, int c)
 			return NULL;
 		i++;
 	}
-
+	return (0);
 }
 
-int main(){
+// int main(){
 
-	char *s = "abcde";
-	int c = 96;
-	printf("%p\n",ft_strchr(s,c));
-	printf("%p\n",strchr(s,c));
-	return 0;
-}
+// 	char *s = "abcde";
+// 	int c = 96;
+// 	printf("%p\n",ft_strchr(s,c));
+// 	printf("%p\n",strchr(s,c));
+// 	return 0;
+// }

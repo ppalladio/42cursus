@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:57:40 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/18 17:02:21 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/26 14:00:49 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	ft_toupper(int c)
 		return (c);
 }
 
-int main()
-{
-	int c = 73;
-	printf("%c\n",ft_toupeer(c));
-	printf("%c\n",toupper(c));
-	return 0;
-}
+// int main()
+// {
+// 	int c = 73;
+// 	printf("%c\n",ft_toupeer(c));
+// 	printf("%c\n",toupper(c));
+// 	return 0;
+// }

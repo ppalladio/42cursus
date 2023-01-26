@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 15:04:20 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/18 17:07:20 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/26 14:00:13 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	ft_isalpha(int c)
 		return (0);
 }
 
-int main(void)
-{
-	unsigned char c = 'c';
-	printf("%d\n", ft_isalpha(c));
-	printf("%d" ,isalpha(c));
-}
+// int main(void)
+// {
+// 	unsigned char c = 'c';
+// 	printf("%d\n", ft_isalpha(c));
+// 	printf("%d" ,isalpha(c));
+// }
 
 // RETURN VALUE
 //        The values returned are //!nonzero
