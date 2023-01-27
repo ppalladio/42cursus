@@ -44,16 +44,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 int main()
 {
-	char dest[] = "olding";
+	char dest[] = "oldstring";
    	const char src[]  = "newstring";
-	size_t i = 11;
-	
+	char *se = "************************";
+	size_t i = 9;
 	printf("Before ft_memmove dest = %s, src = %s\n", dest, src);
+	printf("after ft_memmove dest = %s, src = %s\n", dest, src);
+	printf("address of mememove ft_memmove %p\n",ft_memmove(dest,src,i));
 
-	printf("%p\n",ft_memmove(dest,src,i));
+	printf("%s\n",se);
 
-   printf("After memmove dest = %s, src = %s\n", dest, src);
-	printf("%p\n",memmove(dest,src,i));
+	printf("Before memmove dest = %s, src = %s\n", dest, src);
+   	printf("after memmove dest = %s, src = %s\n", dest, src);
+	printf("address of mememove %p\n",memmove(dest,src,i));
 
 	return 0;
 }
