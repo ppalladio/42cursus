@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:35:12 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/26 15:36:45 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/28 16:50:55 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	dst = (char *)dest;
 	src_ = (char *)src;
-	if (dst == src_)
+	if (dst == src_ || (!dst || !src))
 		return (NULL);
 	else
 	{

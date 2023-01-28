@@ -1,62 +1,50 @@
 
 #include "libft.h"
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	size_t	i;
-	char	*dst;
-	char	*src_;
-
-	i = 0;
-	dst = (char *)dest;
-	src_ = (char *)src;
-	if (dst == src_)
-		return (NULL);
-	else
-	{
-		while (dst[i] && i < n)
+void *ft_memmove(void* dst, const void* src, size_t len)  
+{  
+    char *d = (char *)dst;  
+    const char *s =( const char*)src;  
+    //allocate memory for tmp array  
+    char *temp  = (char *)malloc(sizeof(char) * len);  
+    if(!temp)  
+    {  
+        return NULL;  
+    }  
+    else  
+    {  
+        size_t i = 0;  
+        // Begin with copying the contents  
+        //from source to the temp  
+		while(i < len ) 
 		{
-			dst[i] = src_[i];
-			i++;
+			*(temp + i) = *(s+i);
+			++i;
 		}
-		return (dst);
-	}
-}
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t		i;
-	char		*d;
-	const char	*s;
-
-	d = (char *)dst;
-	s = (char *)src;
-	if (d > s)
-		ft_memcpy(d, s, len);
-	 else{
-		i = 0;
-        while (len > 0)
+		i=0;
+		while(i < len )
 		{
-			d[len - 1] = s[len -1];
-			len--;
+			*(d + i) = *(temp + i);
+            ++i;
 		}
-	 }
-	return (d);
+          
+        //Use the copied content in temp to move the contents in the destn    
+        free(temp); //free the resources allocated to the temp  
+    }  
+    return dst;  
 }
 
-int main()
-{
-	char dest[] = "oldstring";
-   	const char src[]  = "newstring";
-	char *se = "************************";
-	size_t i = 9;
-	printf("Before ft_memmove dest = %s, src = %s\n", dest, src);
-	printf("after ft_memmove dest = %s, src = %s\n", dest, src);
-	printf("address of mememove ft_memmove %p\n",ft_memmove(dest,src,i));
+// int main () {
+// 	char dest[] = "oldng";
+// const char src[]  = "neffwinga";
+// char des[] = "oldng";
+// const char sr[]  = "neffwinga";
+// size_t i =5;
+// printf("Before memmove dest = %s, src = %s\n", dest, src);
+// printf("address of ft_memmove%p\n",memmove(dest, src, i));
+// printf("After ft_memmove dest = %s, src = %s\n", dest, src);
+// printf("Before memmove des = %s, sr = %s\n", des, sr);
+// printf("address of memmove%p\n",memmove(des, sr, i));
+// printf("After memmove des = %s, sr = %s\n", des, sr);
 
-	printf("%s\n",se);
-
-	printf("Before memmove dest = %s, src = %s\n", dest, src);
-   	printf("after memmove dest = %s, src = %s\n", dest, src);
-	printf("address of mememove %p\n",memmove(dest,src,i));
-
-	return 0;
-}
+//    return(0);
+// }
