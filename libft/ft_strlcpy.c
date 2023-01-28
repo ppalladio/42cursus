@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 15:12:45 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/28 18:29:16 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/28 19:15:50 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,19 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 		return (0);
 }
 
-int main()
-{
-	char d[6];
-	char s[] = "abcdefghijklmnopqr";
-	size_t i = 6;
-	int r = strlcpy(d, s, i);
-	int ft_r = ft_strlcpy(d, s, i);
-	printf("FT!!Copied '%s' into '%s', length %d\n",s,d,ft_r);
-	printf("Copied '%s' into '%s', length %d\n",s,d,r);
-	printf("%lu\n", ft_strlcpy(d, s, i));
-	printf("%lu\n", strlcpy(d, s, i));
-	return 0;
-}
+// int main()
+// {
+// 	char d[6];
+// 	char s[] = "abcdefghijklmnopqr";
+// 	size_t i = 6;
+// 	int r = strlcpy(d, s, i);
+// 	int ft_r = ft_strlcpy(d, s, i);
+// 	printf("FT!!Copied '%s' into '%s', length %d\n",s,d,ft_r);
+// 	printf("Copied '%s' into '%s', length %d\n",s,d,r);
+// 	printf("%lu\n", ft_strlcpy(d, s, i));
+// 	printf("%lu\n", strlcpy(d, s, i));
+// 	return 0;
+// }
 
 // #include <stdio.h>
 // #include <string.h>

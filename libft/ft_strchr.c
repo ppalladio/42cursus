@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:06:25 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/28 19:02:35 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/28 19:12:50 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char *ft_strchr(const char *s, int c)
 				return ((char *)(&s[i]));
 			i++;
 		}
+		// if (s[i] == c)
+		// 		return ((char *)(&s[i]));
 	}
 	return (NULL);
 }
