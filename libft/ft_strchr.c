@@ -6,33 +6,41 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:06:25 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/26 14:23:13 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/28 19:02:35 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while (s[i])
+	if (!s)
+		return (0);
+	else
 	{
-		if (s[i] == c)
-			return ((char *)(&s[i]));
-		else
-			return (NULL);
-		i++;
+		while (s[i])
+		{
+			if (s[i] == c)
+				return ((char *)(&s[i]));
+			i++;
+		}
 	}
-	return (0);
+	return (NULL);
 }
 
 // int main(){
 
-// 	char *s = "abcde";
-// 	int c = 96;
+// 	char *s = "abacde as ad s";
+// 	int c = 's';
 // 	printf("%p\n",ft_strchr(s,c));
 // 	printf("%p\n",strchr(s,c));
+
+// printf( "The first occurrence of %c in '%s' is '%s'\n",
+//             c, s, ft_strchr(s,c) );
+// 	printf( "The first occurrence of %c in '%s' is '%s'\n",
+//             c, s, strchr(s,c) );
 // 	return 0;
 // }
