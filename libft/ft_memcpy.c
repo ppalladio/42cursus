@@ -12,25 +12,69 @@
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+// void	*ft_memcpy(void *dest, const void *src, size_t n)
+// {
+// 	size_t	i;
+// 	char	*dst;
+// 	char	*src_;
+
+// 	i = 0;
+// 	dst = (char *)dest;
+// 	src_ = (char *)src;
+// 	if (dst == src_ || (!dst || !src))
+// 		return (NULL);
+// 	else
+// 	{
+// 		while (dst[i] && i < n)
+// 		{
+// 			dst[i] = src_[i];
+// 			i++;
+// 		}
+// 		return (dst);
+// 	}
+// }
+// //? why dont we compare the length of src and dest
+
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*dst;
-	char	*src_;
+	char *d = dest;
+	const char *s = src;
+	char *t;
+	size_t i;
 
 	i = 0;
-	dst = (char *)dest;
-	src_ = (char *)src;
-	if (dst == src_ || (!dst || !src))
+	t = (char *)malloc(sizeof(char) * n);
+	if (d == s && !s)
 		return (NULL);
 	else
 	{
-		while (dst[i] && i < n)
+		while (s[i] && i < n)
 		{
-			dst[i] = src_[i];
+			t[i] = s[i];
+			d[i] = t[i];
 			i++;
 		}
-		return (dst);
+		free(t);
+		return (d);
 	}
 }
-//? why dont we compare the length of src and dest
+//? IF THE LEN OF SRC IS LONGER THAN DEST THEN THE FT WILL PRINT TWICE SRC
+
+
+int main () {
+	const char src[] = "SOMESTRINGSSSSSSSSSSSSS";
+	char dest[] = "longstring";
+
+	printf("src = %s\n", src);
+	printf("Before memcpy dest = %s\n", dest);
+	ft_memcpy(dest, src, strlen(src));
+	printf("After memcpy dest = %s\n", dest);
+
+	const char s[] = "SOMESTRINGSSSSSSSSSSSSS";
+	char d[]= "longstring";
+	printf("Before memcpy dest = %s\n", d);
+	memcpy(d, s, strlen(s)+1);
+	printf("After memcpy dest = %s\n", d);
+
+return(0);
+}
