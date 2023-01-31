@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:06:25 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/28 19:12:50 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/31 21:38:40 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,23 @@
 char *ft_strchr(const char *s, int c)
 {
 	int i;
+	char *ch;
+	int len = 0;
 
+	while(s[len])
+		len++;
 	i = 0;
 	if (!s)
 		return (0);
 	else
 	{
-		while (s[i])
+		while (i<=len)
 		{
+			ch = (char *)(&s[i]);
 			if (s[i] == c)
-				return ((char *)(&s[i]));
+				return (ch);
 			i++;
 		}
-		// if (s[i] == c)
-		// 		return ((char *)(&s[i]));
 	}
 	return (NULL);
 }
