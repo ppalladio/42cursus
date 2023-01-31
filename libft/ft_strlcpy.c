@@ -6,7 +6,7 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 15:12:45 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/31 16:00:42 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/31 17:16:54 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,44 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	
+	size_t	i;
+	size_t	len;
+
+	len = 0;
+	i = 0;
+	while (src[len])
+		len++;
+	if (size == 0)
+		return (len);
+	while (i < (size - 1) && i < len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (len);
 }
-
-// int main()
-// {
-// 	char d[6];
-// 	char s[] = "abcdefghijklmnopqr";
-// 	size_t i = 6;
-// 	int r = strlcpy(d, s, i);
-// 	int ft_r = ft_strlcpy(d, s, i);
-// 	printf("FT!!Copied '%s' into '%s', length %d\n",s,d,ft_r);
-// 	printf("Copied '%s' into '%s', length %d\n",s,d,r);
-// 	printf("%lu\n", ft_strlcpy(d, s, i));
-// 	printf("%lu\n", strlcpy(d, s, i));
-// 	return 0;
-// }
-
-// #include <stdio.h>
-// #include <string.h>
 
 // void test(int size)
 // {
-//     char string[] = "Helhere, Venus";
-//     char buffer[19];
-//     int r;
+// 	char string[] = "Hello there, Venus";
+// 	char buffer[19];
+// 	int r;
 
-//     r = strlcpy(buffer,string,size);
+// 	r = ft_strlcpy(buffer, string, size);
 
-//     printf("Copied '%s' into '%s', length %d\n",
-//             string,
-//             buffer,
-//             r
-//           );
+// 	printf("Copied '%s' into '%s', length %d\n",
+// 		   string,
+// 		   buffer,
+// 		   r);
 // }
 
 // int main()
 // {
-//     test(19);
-//     test(10);
-//     test(1);
-//     test(0);
+// 	test(19);
+// 	test(10);
+// 	test(1);
+// 	test(0);
 
-//     return(0);
+// 	return (0);
 // }
