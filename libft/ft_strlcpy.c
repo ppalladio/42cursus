@@ -6,44 +6,15 @@
 /*   By: yupeng <yupeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 15:12:45 by yupeng            #+#    #+#             */
-/*   Updated: 2023/01/28 19:15:50 by yupeng           ###   ########.fr       */
+/*   Updated: 2023/01/31 16:00:42 by yupeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t j;
-	// int len;
-	void *d;
-	d = NULL;
-    // len = 0;
-	char *pD = d;
-	pD = (char*)malloc(sizeof(char)*size);
-	// while(src[len])
-	// {
-	// 	len++;
-	// }
-
-	// printf("%lu\n%lu", len,size);
-	i = 0;
-	if (pD != src)
-	{
-		j = 0;
-		while (dst[i] && i < size - 1)
-		{
-			pD[i] = src[j];
-			i++;
-			j++;
-		}
-		pD[-1] ='\0';
-		free(pD);
-		return (*src);
-	}
-	else
-		return (0);
+	
 }
 
 // int main()
