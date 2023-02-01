@@ -14,7 +14,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 		len_s++;
 	while (dst[len_d])
 		len_d++;
-	if (size == 0 || !dst)
+	if (size == 0 || len_d > size)
 		return (len_s);
 	else
 	{
@@ -33,28 +33,26 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 
 // int main()
 // {
-// 	char dst[] = "This is ";
-// 	char src[] = "a potentially long string";
-// 	int r = 0;
-
+// 	char dst[] = "12";
+// 	char src[] = "ab";
+// 	int r = 8;
 // 	printf("%zu\n", ft_strlcat(dst, src, r));
-	// printf("%s\n", dst);
-	// puts(buffer);
-	// printf("Value returned: %d\n", r);
-	// if (r > size)
-	// 	puts("String truncated");
-	// else
-	// 	puts("String was fully copied");
+// 	printf("%s\n", dst);
+// 	char d[] = "12";
+// 	char s[] = "ab";
+// 	printf("%zu\n", strlcat(d,s,r));
+// 	printf("%s\n", d);
+	
 
-	// return (0);
+// 	return (0);
 // }
 
-// This is a poten
-// Value returned: 33
-// String truncated
+// // This is a poten
+// // Value returned: 33
+// // String truncated
 
-// If you modify Line 9 to change the size variable (and buffer size) to 64, the buffer is now large enough to accommodate the concatenated strings. Here’s the updated output:
+// // If you modify Line 9 to change the size variable (and buffer size) to 64, the buffer is now large enough to accommodate the concatenated strings. Here’s the updated output:
 
-// This is a potentially long string
-// Value returned: 33
-// String was fully copied
+// // This is a potentially long string
+// // Value returned: 33
+// // String was fully copied
