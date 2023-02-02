@@ -1,6 +1,6 @@
 
 #include "libft.h"
-
+#include <string.h>
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t i;
@@ -10,42 +10,41 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	len_s = 0;
 	len_d = 0;
-	while (src[len_s])
-		len_s++;
+
 	while (dst[len_d])
 		len_d++;
-	if (size == 0 || len_d > size)
-		return (len_s);
-	else
+	while (src[len_s])
+		len_s++;
+	if (size == 0)
+		return (len_d + len_s);
+	if (size <= len_s)
 	{
-		while (i < (size - len_s - 1) && i < len_s)
+		while (len_s <= size)
 		{
 			dst[len_d + i] = src[i];
 			i++;
 		}
-		dst[len_d + i] = '\0';
+		dst[-1] = '\0';
+		return (len_d + size - 1);
 	}
-	if (len_d < size)
-		return (len_d + len_s);
 	else
-		return (size + len_s);
+		return (size + len_d - 1);
 }
 
-// int main()
-// {
-// 	char dst[] = "12";
-// 	char src[] = "ab";
-// 	int r = 8;
-// 	printf("%zu\n", ft_strlcat(dst, src, r));
-// 	printf("%s\n", dst);
-// 	char d[] = "12";
-// 	char s[] = "ab";
-// 	printf("%zu\n", strlcat(d,s,r));
-// 	printf("%s\n", d);
-	
+int main()
+{
+	char dst[] = "1223";
+	char src[] = "ab2344";
+	int r = 2;
+	printf("%lu\n", ft_strlcat(dst, src, r));
+	// printf("%s\n", dst);
+	// char d[] = "12";
+	// char s[] = "ab";
+	// printf("%u\n", strlcat(d,s,r));
+	// printf("%s\n", d);
 
-// 	return (0);
-// }
+	return (0);
+}
 
 // // This is a poten
 // // Value returned: 33
