@@ -3,31 +3,38 @@
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *ch = (unsigned char*)s;
-	unsigned char *uc = NULL;
-	while(n && !s)
+	unsigned char *ch;
+	unsigned char *ptrc;
+	size_t i;
+
+	ch = (unsigned char *)s;
+	ptrc = NULL;
+	i = 0;
+	if (n == 0)
+		return (ptrc);
+	if (i <= n)
 	{
-		if (*ch != (unsigned char) c)
-			ch++;
-		else
-			uc = ch;
-			break;
-		n--;
+		while (ch[i])
+		{
+			if (ch[i] != c)
+				i++;
+			else
+			{
+				ptrc = &ch[i];
+				break;
+			}
+		}
 	}
-	return (uc);
+	return (ptrc);
 }
 
-// int main(int argc, char ** argv)                                                
-// {                                                                               
-//   char * result;                                                                
-                                                                                
-//   if ( argc != 2 )                                                              
-//     printf( "Usage: %s string\n", argv[0] );                                    
-//   else                                                                          
-//   {                                                                             
-//     if ((result = (char *)ft_memchr( argv[1], 'x', strlen(argv[1])) ) != NULL)     
-//       printf( "The string starting with x is %s\n", result );                   
-//     else                                                                        
-//       printf( "The letter x cannot be found in the string\n" );                 
-//   }                                                                             
-// }           
+// int	main()
+// {
+// 	char result[] = "my2str1ng";
+// 	int i;
+// 	i = '2';
+// 	size_t t;
+// 	t = 4;
+// 	printf("%p\n", ft_memchr(result, i, t));
+// 	printf("%p\n", memchr(result, i, t));
+// }
