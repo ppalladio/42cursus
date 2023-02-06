@@ -13,7 +13,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		len_s++;
 	i = 0;
 	sub = (char *)s;
-	sub = (char *)malloc(sizeof(char) * (len_s - start));
+	sub = (char *)malloc((len_s - start));
 	if (sub == NULL)
 		return NULL;
 	while (i < len)
