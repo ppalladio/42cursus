@@ -14,3 +14,6 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
 		}
 	}
 }
+
+//  first checks if both the input 
+// string s and the function pointer f are non-NULL
