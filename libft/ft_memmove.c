@@ -3,29 +3,31 @@
 
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *ptrd = (char *)dst;
-	char *ptrs = (char *)src;
-	if (ptrs >= ptrd)
+	unsigned char *d = (unsigned char *)dst;
+	const unsigned char *s = (const unsigned char *)src;
+	size_t i;
+
+	if (d == s)
+		return dst;
+	if (d < s)
 	{
-		while (len)
+		i = 0;
+		while (i < len)
 		{
-			ptrd[len] = ptrs[len];
+			d[i] = s[i];
+			i++;
+		}
+	}
+
+	else
+	{;
+		while (len > 0)
+		{
+			d[len-1] = s[len-1];
 			len--;
 		}
 	}
-	else if (ptrd > ptrs)
-	{
-		ptrd += len +1;
-		ptrs += len +1;
-		while (len)
-		{
-			ptrd[len] = ptrs[len];
-			len--;
-		}
-	}
-	return	ptrd;
-	if (!dst	|| !src)
-		return (0);
+	return d;
 }
 
 // int main()
