@@ -31,20 +31,20 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + len_d - 1);
 }
 
-int main()
-{
-	char dst[] = "1223";
-	char src[] = "ab2344";
-	int r = 2;
-	printf("%lu\n", ft_strlcat(dst, src, r));
-	// printf("%s\n", dst);
-	// char d[] = "12";
-	// char s[] = "ab";
-	// printf("%u\n", strlcat(d,s,r));
-	// printf("%s\n", d);
+// int main()
+// {
+// 	char dst[] = "1223";
+// 	char src[] = "ab2344";
+// 	int r = 2;
+// 	printf("%lu\n", ft_strlcat(dst, src, r));
+// 	// printf("%s\n", dst);
+// 	// char d[] = "12";
+// 	// char s[] = "ab";
+// 	// printf("%u\n", strlcat(d,s,r));
+// 	// printf("%s\n", d);
 
-	return (0);
-}
+// 	return (0);
+// }
 
 // // This is a poten
 // // Value returned: 33

@@ -40,12 +40,12 @@ char *ft_strnstr(const char *h, const char *n, size_t len)
 	return (NULL);
 }
 
-int main()
-{
-	char *str = "my f oh my sd  as  oh my";
-	char *str1 = "d";
-	size_t len = 6;
-	printf("%s\n", ft_strnstr(str, str1, len));
-	printf("%s\n", strnstr(str, str1, len));
-	return (0);
-}
+// int main()
+// {
+// 	char *str = "my f oh my sd  as  oh my";
+// 	char *str1 = "d";
+// 	size_t len = 6;
+// 	printf("%s\n", ft_strnstr(str, str1, len));
+// 	printf("%s\n", strnstr(str, str1, len));
+// 	return (0);
+// }
