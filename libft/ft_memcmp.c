@@ -1,33 +1,24 @@
 
 #include "libft.h"
 
-/// @brief
-/// @param str1
-/// @param str2
-/// @param n
-/// @return
 int ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	unsigned char *s1 = (unsigned char *)str1;
 	unsigned char *s2 = (unsigned char *)str2;
 	size_t i;
-	int c;
-	// unsigned char c;
-	c = 0;
+
 	i = 0;
 	if (n == 0)
 		return (0);
 	while (i < n)
 	{
-		if (s1[i] == s2[i])
+		if (s1[i] > s2[i])
+			return (1);
+		if (s1[i] < s2[i])
+			return (-1);
 			i++;
-		if (s1[i] != s2[i])
-		{
-			c = s1[i] - s2[i];
-			break;
-		}
 	}
-	return (c);
+	return (0);
 }
 
 // int main()
