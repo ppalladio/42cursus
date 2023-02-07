@@ -55,32 +55,21 @@ size_t len(const char *s)
 // }
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+
 	size_t i;
-	int sum;
-	size_t len_1;
-	size_t len_2;
 
 	i = 0;
-	sum = 0;
-	len_1 = len(s1);
-	len_2 = len(s1);
-	while (s2[len_2])
-		len_2++;
-	if (len_1 < n)
+	while (i < n)
 	{
-		while (s1[len_1])
-			if (s1[i] != s2[i])
-				i += s1[i] - s2[i];
+		if (s1[i] < s2[i])
+			return -1;
+		else if (s1[i] > s2[i])
+			return 1;
+		else if (s1[i] == '\0')
+			return 0;
 		i++;
 	}
-	else if (len_2 < n)
-	{
-		while (s2[len_2])
-			if (s1[i] != s2[i])
-				i += s1[i] - s2[i];
-		i++;
-	}
-	return i;
+	return 0;
 }
 
 // int main()
