@@ -18,20 +18,22 @@ char *ft_strnstr(const char *h, const char *n, size_t len)
 {
 	size_t i;
 	size_t j;
+	char *ch;
 
+	ch = NULL;
 	i = 0;
 	j = 0;
 	if (!*(char *)n)
 		return ((char *)h);
 	else
 	{
-		while (i < len && *h)
+		while (i < len && h[i])
 		{
-			if (n[0] == h[i])
+			if (h[i] == n[0])
 				while (h[i + j] == n[j] && i + j < len)
 				{
-					if (*h)
-						return ((char *)&h[i]);
+					return ((char *)&h[i]);
+					printf("%c",h[i]);
 					j++;
 				}
 			i++;
@@ -42,9 +44,13 @@ char *ft_strnstr(const char *h, const char *n, size_t len)
 
 // int main()
 // {
-// 	char *str = "my f oh my sd  as  oh my";
-// 	char *str1 = "d";
-// 	size_t len = 6;
+// 	char *str;
+// 	char *str1 = "y";
+// 	size_t len = 10;
+// 	if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "dol", 30)))
+//         ft_print_result("NULL");
+//     else
+//         ft_print_result(str);
 // 	printf("%s\n", ft_strnstr(str, str1, len));
 // 	printf("%s\n", strnstr(str, str1, len));
 // 	return (0);
