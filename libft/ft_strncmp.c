@@ -12,64 +12,24 @@
 
 #include "libft.h"
 
-size_t len(const char *s)
-{
-	size_t i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-// size_t sum1(char *s1, char *s2, size_t i)
-// {
-// 	size_t len_s;
-// 	size_t i;
-
-// 	i = 0;
-// 	len_s = len(s1);
-// 	while (s1[len_s])
-// 	{
-// 		if (s1[i] != s2[i])
-// 			i += s1[i] - s2[i];
-// 		i++;
-// 	}
-// 	return i;
-// }
-
-// size_t sum2(char *s1, char *s2, size_t i)
-// {
-// 	size_t len_s;
-// 	size_t i;
-
-// 	i = 0;
-// 	len_s = len(s2);
-// 	while (s2[len_s])
-// 	{
-// 		if (s1[i] != s2[i])
-// 			i += s1[i] - s2[i];
-// 		i++;
-// 	}
-// 	return i;
-// }
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+    size_t i;
 
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (s1[i] < s2[i])
-			return -1;
-		else if (s1[i] > s2[i])
-			return 1;
-		else if (s1[i] == '\0')
-			return 0;
-		i++;
-	}
-	return 0;
+    i = 0;
+	if (!n)
+        return 0;
+    while (i < n && s1[i] && s2[i])
+    {
+        if (s1[i] < s2[i])
+            return -1;
+        else if (s1[i] > s2[i])
+            return 1;
+        i++;
+    }
+    if (i == n)
+        return 0;
+    return ((unsigned char )s1[i] - (unsigned char )s2[i]);
 }
 
 // int main()
