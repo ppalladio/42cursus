@@ -18,24 +18,22 @@ char *ft_strnstr(const char *h, const char *n, size_t len)
 {
 	size_t i;
 	size_t j;
-	char *ch;
-
-	ch = NULL;
-	i = 0;
-	j = 0;
 	if (!*(char *)n)
 		return ((char *)h);
 	else
 	{
+		i = 0;
 		while (i < len && h[i])
 		{
-			if (h[i] == n[0])
-				while (h[i + j] == n[j] && i + j < len)
-				{
+			j = 0;
+			while (h[i + j] == n[j] && i + j < len)
+			{
+				j++;
+				if (j == strlen(n))
 					return ((char *)&h[i]);
-					printf("%c",h[i]);
-					j++;
-				}
+				while (h[i + j])
+					break;
+			}
 			i++;
 		}
 	}
