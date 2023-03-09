@@ -2,40 +2,36 @@
 #include "libft.h"
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t dlen;
-	size_t slen;
-	size_t i;
-	size_t res;
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
-	i = 0;
-	res = 0;
-	if (!size)
-		return slen;
-	if (size > dlen)
-		res = dlen + slen;
-	else
-		res = size + slen;
-	while (dlen + i < size - 1 && src[i])
+	size_t dlen = ft_strlen(dst);
+	size_t slen = ft_strlen(src);
+	size_t n;
+
+	n = size - dlen - 1;
+	size_t i = 0;
+	if (n == 0)
+		return dlen + slen;
+	if (size <= dlen)
+		return size + slen;
+	while (i < n && src[i])
 	{
 		dst[dlen + i] = src[i];
 		i++;
 	}
 	dst[dlen + i] = '\0';
-	return (res);
-}
 
+	return (dlen + slen);
+}
 // int main()
 // {
 // 	char dst[] = "1223";
 // 	char src[] = "ab2344";
 // 	int r = 2;
 // 	printf("%lu\n", ft_strlcat(dst, src, r));
-// 	// printf("%s\n", dst);
-// 	// char d[] = "12";
-// 	// char s[] = "ab";
-// 	// printf("%u\n", strlcat(d,s,r));
-// 	// printf("%s\n", d);
+// 	printf("%s\n", dst);
+// 	char d[] = "12";
+// 	char s[] = "ab";
+// 	printf("%u\n", strlcat(d,s,r));
+// 	printf("%s\n", d);
 
 // 	return (0);
 // }
