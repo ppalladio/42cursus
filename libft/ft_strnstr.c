@@ -11,35 +11,36 @@
 /* ************************************************************************** */
 
 // simplistic algorithm with O(n2) worst case
-
 #include "libft.h"
 
 char *ft_strnstr(const char *h, const char *n, size_t len)
 {
 	size_t i;
 	size_t j;
+	i = 0;
+
 	if (!*(char *)n)
 		return ((char *)h);
+
 	else
 	{
-		i = 0;
 		while (i < len && h[i])
 		{
 			j = 0;
-			while (h[i + j] == n[j] && i + j < len)
+			if ((unsigned char)h[i] == (unsigned char)n[0])
 			{
-				j++;
-				if (j == strlen(n))
-					return ((char *)&h[i]);
-				while (h[i + j])
-					break;
+				while ((unsigned char)h[i + j] == (unsigned char)n[j] && i + j < len)
+				{
+					if (!n[j+1])
+						return ((unsigned char *)&h[i]);
+					j++;
+				}
 			}
 			i++;
 		}
 	}
 	return (NULL);
 }
-
 // int main()
 // {
 // 	char *str;
