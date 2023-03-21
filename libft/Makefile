@@ -26,19 +26,24 @@ ft_putnbr_fd.c
 OBJ=$(SRC:.c=.o)
 
 
-# SRCBONUS=ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-# ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-# ft_lstiter.c ft_lstmap.c
-# OBJBONUS=$(SRCBONUS:.c = .o)
+SRCBONUS=ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
+ft_lstiter.c ft_lstmap.c
+OBJBONUS=$(SRCBONUS:.c=.o)
 
 all:$(NAME)
 
-%.o : %.c $(HEADER)
+%.o:%.c $(HEADER)
 	$(CC) $(CFLAG) -c $< -o $@
 
-$(NAME):$(OBJ) $(SRCBONUS) $(HEADER)
-	ar rcs $(NAME) $(OBJ) $(SRCBONUS)
+$(NAME):$(OBJ) $(HEADER)
+	ar rcs $(NAME) $(OBJ)
 
+bonus:.bonus
+
+.bonus:$(OBJ) $(SRCBONUS)
+	ar rcs $(NAME)  $(SRCBONUS)
+	
 clean:
 	rm -f ${OBJ} ${OBJBONUS}
 

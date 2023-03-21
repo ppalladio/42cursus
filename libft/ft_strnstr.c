@@ -27,12 +27,12 @@ char *ft_strnstr(const char *h, const char *n, size_t len)
 		while (i < len && h[i])
 		{
 			j = 0;
-			if ((unsigned char)h[i] == (unsigned char)n[0])
+			if (h[i] == n[0])
 			{
-				while ((unsigned char)h[i + j] == (unsigned char)n[j] && i + j < len)
+				while (h[i + j] == n[j] && i + j < len)
 				{
 					if (!n[j+1])
-						return ((unsigned char *)&h[i]);
+						return ((char *)&h[i]);
 					j++;
 				}
 			}
