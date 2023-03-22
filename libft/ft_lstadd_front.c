@@ -8,8 +8,9 @@
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *new_lst = (t_list *)malloc(sizeof(t_list));
-	new_lst->content = new;
-	new_lst->next = (*lst);
-	*lst = new_lst;
+	if (lst && new)
+    {
+        new->next = *lst;
+        *lst = new;
+    }
 }
