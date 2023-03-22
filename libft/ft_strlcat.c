@@ -30,7 +30,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 // 	printf("%s\n", dst);
 // 	char d[] = "12";
 // 	char s[] = "ab";
-// 	printf("%u\n", strlcat(d,s,r));
+// 	printf("%lu\n", strlcat(d,s,r));
 // 	printf("%s\n", d);
 
 // 	return (0);

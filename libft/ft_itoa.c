@@ -27,7 +27,7 @@ char *ft_itoa(int n)
 	int i;
 	int sign;
 
-	if (n == -2147483648)
+	if (n <= -2147483648)
         return (ft_strdup("-2147483648"));
 	i = nlen(n);
 	res = (char *)malloc(sizeof(char) * (i + 1));

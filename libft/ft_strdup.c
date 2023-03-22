@@ -1,7 +1,7 @@
 
 #include "libft.h"
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char *ch;
 	int i;
@@ -10,7 +10,7 @@ char *ft_strdup(const char *s1)
 	size = 0;
 	while (s1[size])
 		size++;
-	ch = (char *)malloc(sizeof(char) * (size +1));
+	ch = (char *)malloc(size +1);
 	if (!ch)
 		return NULL;
 	i = 0;

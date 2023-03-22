@@ -12,5 +12,4 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	new_lst->content = new;
 	new_lst->next = (*lst);
 	*lst = new_lst;
-
 }
