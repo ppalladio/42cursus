@@ -41,9 +41,9 @@ $(NAME):$(OBJ) $(HEADER)
 
 bonus:.bonus
 
-.bonus:$(OBJ) $(SRCBONUS)
-	ar rcs $(NAME)  $(SRCBONUS)
-	
+.bonus:$(OBJ) $(OBJBONUS)
+	ar rcs -r $(NAME) $?
+ 	
 clean:
 	rm -f ${OBJ} ${OBJBONUS}
 
