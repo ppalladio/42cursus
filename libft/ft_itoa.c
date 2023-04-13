@@ -1,15 +1,15 @@
-
 #include "libft.h"
+
+
 
 int nlen(int n)
 {
 	int i;
-
 	i = 0;
 	if (n <= 0)
 	{
-		i++;
 		n = -n;
+		i++;
 	}
 	while (n > 0)
 	{
@@ -19,11 +19,14 @@ int nlen(int n)
 	return (i);
 }
 
+
+
 char *ft_itoa(int n)
 {
 	int len;
 	char *str;
 	int sign;
+	int i;
 
 	if (n <= -2147483648)
 		return (ft_strdup("-2147483648"));
@@ -35,8 +38,8 @@ char *ft_itoa(int n)
 	sign = 0;
 	if (n < 0)
 	{
-		sign = 1;
 		n = -n;
+		sign = 0;
 	}
 	while (len >= 0)
 	{
@@ -45,14 +48,6 @@ char *ft_itoa(int n)
 		len--;
 	}
 	if (sign)
-	{
 		str[0] = '-';
-	}
 	return (str);
 }
-
-// int main()
-// {
-// 	printf("%s\n", ft_itoa(0));
-// 	return (0);
-// }
