@@ -42,13 +42,13 @@ $(NAME):$(OBJ) $(HEADER)
 bonus:.bonus
 
 .bonus:$(OBJ) $(OBJBONUS)
-	ar rcs -r $(NAME) $?
- 	
+	ar rcs $(NAME) $?
+
 clean:
-	rm -f ${OBJ} ${OBJBONUS}
+	rm -rf ${OBJ} ${OBJBONUS}
 
 fclean:clean
-	rm -f ${NAME}
+	rm -rf ${NAME}
 
 re:fclean all
 
