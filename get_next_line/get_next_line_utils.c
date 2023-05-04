@@ -65,3 +65,12 @@ char *ft_strcat(const char *dest, const char *src)
 	str[i + j] = '\0';
 	return str;
 }
+
+char *ft_free(char *buffer, char *str)
+{
+	char *res;
+
+	res = ft_strcat(buffer, str);
+	free(buffer);
+	return (res);
+}

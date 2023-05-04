@@ -12,9 +12,3 @@ char	*get_next_line(int fd)
 	n = 0;
 }
 
-int main()
-{
-	char *c = "dadkjds";
-	printf("%c\n",print_line(c));
-	return 0;
-}
