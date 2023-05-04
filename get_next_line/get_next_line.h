@@ -18,7 +18,9 @@
 
 char	*get_next_line(int fd);
 
-size_t ft_len(char *str);
-
+size_t	ft_len(const char *str);
+void	*ft_calloc(size_t n, size_t size);
+void	ft_bzero(void *s, size_t n);
+char *strcat(char *dest, const char *src);
 
 #endif
