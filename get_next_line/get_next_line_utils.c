@@ -63,7 +63,7 @@ char *ft_strcat(const char *dest, const char *src)
 		j++;
 	}
 	str[i + j] = '\0';
-	return str;
+	return (str);
 }
 
 char *ft_free(char *buffer, char *str)
@@ -73,4 +73,29 @@ char *ft_free(char *buffer, char *str)
 	res = ft_strcat(buffer, str);
 	free(buffer);
 	return (res);
+}
+
+char *ft_remain(char *buffer)
+{
+	int i;
+	int j;
+	char *str;
+
+	i == 0;
+	while (buffer[i] && buffer[i] == '\n')
+		i++;
+	if (!buffer[i])
+	{
+		free(buffer);
+		return (NULL);
+	}
+	str = ft_calloc(ft_len(buffer) -i + 1, 1);
+	if (!str)
+	return (NULL);
+	j = 0;
+	while(buffer[i])
+		str[j++] = buffer[i++];
+	free(buffer);
+	return (str);
+
 }
