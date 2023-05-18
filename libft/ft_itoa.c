@@ -1,28 +1,52 @@
+#include "libft.h"
 
-// #include "libft.h"
 
-// char *ft_itoa(int n)
-// {
-// 	char *str;
-// 	int i;
-// 	int sign;
-// 	char *result;
-// 	const char *p;
-// 	p = (const char *)n;
-// 	i = 0;
-// 	sign = 1;
-// 	result = NULL;
-// 	str = (char *)malloc(sizeof(char) * ((ft_strlen(p) + 1)));
 
-// 	if (!str || !n)
-// 		return NULL;
-// 	if (str[i] == '-')
-// 		sign = -1;
-// 	i++;
-// 	while (str[i])
-// 	{
-// 		result = str[i]*10 + result - '0';
-// 		i++;
-// 	}
-// 	return ((result));
-// }
+int nlen(int n)
+{
+	int i;
+	i = 0;
+	if (n <= 0)
+	{
+		n = -n;
+		i++;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
+
+
+char *ft_itoa(int n)
+{
+	int len;
+	char *str;
+	int sign;
+
+	if (n <= -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = nlen(n);
+	str = malloc(len + 1);
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	sign = 0;
+	if (n < 0)
+	{
+		n = -n;
+		sign = 1;
+	}
+	while (len >= 0)
+	{
+		str[len - 1] = n % 10 + '0';
+		n /= 10;
+		len--;
+	}
+	if (sign)
+		str[0] = '-';
+	return (str);
+}
