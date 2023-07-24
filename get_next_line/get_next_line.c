@@ -1,65 +1,134 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nnuno-ca <nnuno-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/06 00:47:06 by nnuno-ca          #+#    #+#             */
+/*   Updated: 2022/11/12 22:53:45 by nnuno-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "get_next_line.h"
-#include <fcntl.h>
-char print_line(char *c)
+#include "get_next_line.h" 
+
+static char	*clean_printed(char	*global_buffer)
 {
-	return c[0];
+	size_t	i;
+	char	*new;
+	size_t	j;
+
+	i = 0;
+	while (global_buffer[i] && global_buffer[i] != '\n')
+		i++;
+	if (!global_buffer[i])
+	{
+		free(global_buffer);
+		return (NULL);
+	}
+	new = malloc(((ft_strlen(global_buffer) - i) + 1) * sizeof(char));
+	if (!new)
+		return (NULL);
+	i++;
+	j = 0;
+	while (global_buffer[i])
+		new[j++] = global_buffer[i++];
+	new[j] = '\0';
+	free(global_buffer);
+	return (new);
 }
 
-char *get_next_line(int fd)
+static char	*get_line(char *global_buffer)
 {
-	ssize_t n;
-	size_t i;
-	char *buff;
+	size_t	len;
+	size_t	i;
+	char	*line;
 
-	n = 0;
-	buff = calloc(BUFFER_SIZE, 1);
-
-	if (fd <= 0)
+	len = 0;
+	i = 0;
+	if (!global_buffer[i])
+		return (NULL);
+	while (global_buffer[len] && global_buffer[len] != '\n')
+		len++;
+	line = malloc((len + 2) * sizeof(char));
+	if (!line)
+		return (NULL);
+	while (i <= len)
 	{
-		free(buff);
-		return NULL;
+		line[i] = global_buffer[i];
+		i++;
 	}
-	while (1)
-	{
-		i = read(fd, buff + n, 1);
-		if (i < 1)
-		{
-			if (n > 0)
-			{
-				buff[n] = '\0';
-				return buff;
-			}
-			else
-			{
-				free(buff);
-				return NULL;
-			}
-		}
-		if (buff[n] == '\n')
-		{
-			buff[n + 1] = '\0';
-			return buff;
-		}
-		n += i;
-	}
+	line[i] = '\0';
+	return (line);
 }
 
-int main()
+static char	*join_n_free(char *global_buffer, char *local_buffer)
 {
-	int fd;
-	char *str;
+	size_t	len_global;
+	size_t	len_local;
+	char	*appended;
+	size_t	i;
+	size_t	j;
 
-	fd = open("./test.txt", O_RDONLY);
-	if (fd == -1)
-		return -1;
-	while (1)
+	if (!global_buffer || !local_buffer)
+		return (NULL);
+	len_global = ft_strlen(global_buffer);
+	len_local = ft_strlen(local_buffer);
+	appended = malloc((len_global + len_local + 1) * sizeof(char));
+	if (!appended)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (j < len_global)
+		appended[i++] = global_buffer[j++];
+	j = 0;
+	while (j < len_local)
+		appended[i++] = local_buffer[j++];
+	appended[i] = '\0';
+	free(global_buffer);
+	return (appended);
+}
+
+static char	*read_buffsize(int fd, char *global_buffer)
+{
+	char	*buffer;
+	int		bytes_rd;
+
+	if (global_buffer == NULL)
+		global_buffer = ft_calloc(1, sizeof(char));
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
+	bytes_rd = 1;
+	while (bytes_rd > 0)
 	{
-		str = get_next_line(fd);
-		if (str == NULL)
-			return -1;
-		printf("%s", str);
-		free(str);
+		bytes_rd = read(fd, buffer, BUFFER_SIZE);
+		if (bytes_rd == -1 || (bytes_rd == 0 && global_buffer == NULL))
+		{
+			free(global_buffer);
+			free(buffer);
+			return (NULL);
+		}
+		buffer[bytes_rd] = '\0';
+		global_buffer = join_n_free(global_buffer, buffer);
+		if (ft_strchr(global_buffer, '\n') == true)
+			break ;
 	}
-	return 0;
+	free(buffer);
+	return (global_buffer);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	*global_buffer;
+	char		*line;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	global_buffer = read_buffsize(fd, global_buffer);
+	if (!global_buffer)
+		return (NULL);
+	line = get_line(global_buffer);
+	global_buffer = clean_printed(global_buffer);
+	return (line);
 }
